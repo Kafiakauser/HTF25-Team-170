@@ -1,7 +1,10 @@
 import React from "react";
-import logo from "../assets/images/logo.svg"; // or logo.png if you have PNG
-import meal1 from "../assets/images/meal-placeholder.jpg"; // sample meal images
-import meal2 from "../assets/images/landing-hero.png";
+import { Link } from "react-router-dom";  // ← ADD THIS IMPORT
+import logo from "../assets/images/logo.png";
+import meal1 from "../assets/images/carb.jpg";
+import meal2 from "../assets/images/protein.jpg";
+import meal3 from "../assets/images/carb.jpg";
+import meal4 from "../assets/images/protein.jpg";
 
 const LandingPage = () => {
   return (
@@ -13,12 +16,18 @@ const LandingPage = () => {
           <h1 className="font-bold text-xl text-[#3E5F44]">MealMatrix</h1>
         </div>
         <div className="flex gap-4">
-          <button className="px-4 py-2 rounded-lg border border-[#3E5F44] text-[#3E5F44] hover:bg-[#3E5F44] hover:text-white transition">
+          <Link
+            to="/signup"
+            className="px-4 py-2 rounded-lg border border-[#3E5F44] text-[#3E5F44] hover:bg-[#3E5F44] hover:text-white transition"
+          >
             SignUp
-          </button>
-          <button className="px-4 py-2 rounded-lg bg-[#3E5F44] text-white hover:opacity-90 transition">
+          </Link>
+          <Link
+            to="/login"
+            className="px-4 py-2 rounded-lg bg-[#3E5F44] text-white hover:opacity-90 transition"
+          >
             Login
-          </button>
+          </Link>
         </div>
       </header>
 
@@ -30,16 +39,30 @@ const LandingPage = () => {
           Just take a picture of your meal and upload it to know if you're eating healthy or not.
           <br />
           <br />
-          If you’re new here, click on SignUp and take the quiz to get started!
+          If you're new here, click on SignUp and take the quiz to get started!
           <br />
           <br />
           <strong>Here's to a healthy lifestyle!</strong>
         </p>
 
         <div className="flex gap-4 mt-6 flex-wrap justify-center">
-          <img src={meal1} alt="Meal 1" className="w-36 h-36 rounded-lg object-cover shadow-md" />
-          <img src={meal2} alt="Meal 2" className="w-36 h-36 rounded-lg object-cover shadow-md" />
+          {[meal1, meal2, meal3, meal4].map((meal, index) => (
+            <img
+              key={index}
+              src={meal}
+              alt={`Meal ${index + 1}`}
+              className="w-36 h-36 rounded-lg object-cover shadow-md border-4 border-[#3E5F44]"
+            />
+          ))}
         </div>
+
+        {/* Get Started Button - MOVED INSIDE */}
+        <Link 
+          to="/signup"
+          className="mt-8 bg-[#3E5F44] text-white px-8 py-4 rounded-lg text-xl font-semibold hover:bg-[#2d4633] transition"
+        >
+          Get Started
+        </Link>
       </main>
 
       {/* Why Calorie Tracking */}
