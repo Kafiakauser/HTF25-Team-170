@@ -1,0 +1,21 @@
+{
+  "name": "htf25-team-170",
+  "version": "1.0.0",
+  "description": "In this Readme, you will find a guide on how to fork this Repository, add files to it, and make a pull request to contribute your changes.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kafiakauser/HTF25-Team-170.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Kafiakauser/HTF25-Team-170/issues"
+  },
+  "homepage": "https://github.com/Kafiakauser/HTF25-Team-170#readme"
+}
